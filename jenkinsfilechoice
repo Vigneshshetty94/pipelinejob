@@ -1,5 +1,5 @@
 pipeline {
-	agent none {
+	agent any 
 		perimeters {
 		string(name: 'NAME', description: 'Enter your name')
 		booleanParam(name: 'SKIP TEST', description: 'Need to skip Test Build')
@@ -15,7 +15,7 @@ pipeline {
 					}
 				}
 				
-				stage('TEST'){
+				stage('TEST') {
 				agent {label 'Slave2'}
 					step {
 						echo "Need to skip Test ? ${params. 'SKIP TEST'}"
@@ -33,6 +33,5 @@ pipeline {
 				}				
 			}
                }
-	}
 		
-}
+     }
