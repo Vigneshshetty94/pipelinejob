@@ -1,6 +1,7 @@
 pipeline {
         agent { label 'Slave2' }
         stages {
+           agent { label 'master' }
            stage('BUILD') {
                 steps {
                       sh 'echo this is my first pipeline job'
@@ -8,6 +9,7 @@ pipeline {
                      }
                   }
             stage('TEST') {
+             agent { label 'Slave2' }
                 steps {
                  sh '''
                       echo hello all
@@ -17,7 +19,8 @@ pipeline {
              }
 
            stage('Deploy') {
-                 steps {
+                agent { label 'Slave2' }
+                   steps {
                  sh 'echo code has been deployed'
                     }
                  }
