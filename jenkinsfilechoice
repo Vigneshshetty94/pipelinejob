@@ -1,6 +1,6 @@
 pipeline {
 	agent any 
-		perimeters {
+		parameters {
 		string(name: 'NAME', description: 'Enter your name')
 		booleanParam(name: 'SKIP TEST', description: 'Need to skip Test Build')
 		choice(name: 'BUILD', choices: ['BUILD', 'TEST', 'DEPLOY'], description: 'Select the your build')
