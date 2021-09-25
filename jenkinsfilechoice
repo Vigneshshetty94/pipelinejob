@@ -8,7 +8,7 @@ pipeline {
 		
 		stages {
 				stage('BUILD') {
-				agent {label 'c-file-s2'}
+				agent {label 'master'}
 					step {
 						echo "My name is ${params. 'NAME'}"
 						sh 'ls -lrt'
@@ -16,7 +16,7 @@ pipeline {
 				}
 				
 				stage('TEST'){
-				agent {label 'java-s3'}
+				agent {label 'Slave2'}
 					step {
 						echo "Need to skip Test ? ${params. 'SKIP TEST'}"
 						echo 'we are dpolying Test build'
@@ -24,7 +24,7 @@ pipeline {
 				}	
 				
 				stage('DEPLOY') {
-				agent {label 'c-file-s2'}
+				agent {label 'master'}
 					step {
 						echo "Select choice to build ${params. 'BUILD'}"
 						echo "Enter password ${params. 'SERVER PWD'}"
