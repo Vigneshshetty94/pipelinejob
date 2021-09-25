@@ -1,14 +1,15 @@
 pipeline {
+agent any
         stages {
            stage('BUILD') {
-               agent { label 'master' }
+               agent {label 'master'}
                   steps {
                       sh 'echo this is my first pipeline job'
                       sh 'ls -lrt'
                      }
                   }
             stage('TEST') {
-             agent { label 'Slave2' }
+             agent {label 'Slave2'}
                 steps {
                  sh '''
                       echo hello all
@@ -18,7 +19,7 @@ pipeline {
              }
 
            stage('Deploy') {
-                agent { label 'Slave2' }
+                agent {label 'Slave2'}
                    steps {
                  sh 'echo code has been deployed'
                     }
