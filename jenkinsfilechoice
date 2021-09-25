@@ -1,11 +1,10 @@
 pipeline {
-	agent none 
+	agent none {
 		perimeters {
 		string(name: 'NAME', description: 'Enter your name')
 		booleanParam(name: 'SKIP TEST', description: 'Need to skip Test Build')
 		choice(name: 'BUILD', choices: ['BUILD', 'TEST', 'DEPLOY'], description: 'Select the your build')
 		password(name: 'SERVER_PWD', description: 'Enter Password')
-		}
 		
 		stages {
 				stage('BUILD') {
@@ -31,8 +30,9 @@ pipeline {
 						echo "Enter password ${params. 'SERVER PWD'}"
 						echo 'Depolying Build'
 					}
-				}		
-					
+				}				
 			}
+               }
+	}
 		
 }
