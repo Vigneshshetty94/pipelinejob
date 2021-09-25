@@ -5,6 +5,7 @@ pipeline {
 		booleanParam(name: 'SKIP TEST', description: 'Need to skip Test Build')
 		choice(name: 'BUILD', choices: ['BUILD', 'TEST', 'DEPLOY'], description: 'Select the your build')
 		password(name: 'SERVER_PWD', description: 'Enter Password')
+		}
 		
 		stages {
 				stage('BUILD') {
