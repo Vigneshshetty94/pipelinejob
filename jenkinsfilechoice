@@ -1,5 +1,5 @@
 pipeline {
-	agent none {
+	agent none 
 		perimeters {
 		string(name: 'NAME', description: 'Enter your name')
 		booleanParam(name: 'SKIP TEST', description: 'Need to skip Test Build')
