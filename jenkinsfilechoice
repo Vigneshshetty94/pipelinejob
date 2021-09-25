@@ -1,0 +1,38 @@
+pipeline {
+	agent none {
+		perimeters {
+		string(name: 'NAME', description: 'Enter your name')
+		booleanParam(name: 'SKIP TEST', description: 'Need to skip Test Build')
+		choice(name: 'BUILD', choices: ['BUILD', 'TEST', 'DEPLOY'], description: 'Select the your build')
+		password(name: 'SERVER_PWD', description: 'Enter Password')
+		
+		stages {
+				stage('BUILD') {
+				agent {label 'c-file-s2'}
+					step {
+						echo "My name is ${params. 'NAME'}"
+						sh 'ls -lrt'
+					}
+				}
+				
+				stage('TEST'){
+				agent {label 'java-s3'}
+					step {
+						echo "Need to skip Test ? ${params. 'SKIP TEST'}"
+						echo 'we are dpolying Test build'
+					}
+				}	
+				
+				stage('DEPLOY') {
+				agent {label 'c-file-s2'}
+					step {
+						echo "Select choice to build ${params. 'BUILD'}"
+						echo "Enter password ${params. 'SERVER PWD'}"
+						echo 'Depolying Build'
+					}
+				}		
+					
+			}
+		}
+	}
+}
