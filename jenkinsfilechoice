@@ -9,7 +9,7 @@ pipeline {
 		       stages {
 				stage('BUILD') {
 				agent {label 'master'}
-					step {
+					steps {
 						echo "My name is ${params. 'NAME'}"
 						sh 'ls -lrt'
 					}
@@ -17,7 +17,7 @@ pipeline {
 				
 				stage('TEST') {
 				agent {label 'Slave2'}
-					step {
+					steps {
 						echo "Need to skip Test ? ${params. 'SKIP TEST'}"
 						echo 'we are dpolying Test build'
 					}
@@ -25,7 +25,7 @@ pipeline {
 				
 				stage('DEPLOY') {
 				agent {label 'master'}
-					step {
+					steps {
 						echo "Select choice to build ${params. 'BUILD'}"
 						echo "Enter password ${params. 'SERVER PWD'}"
 						echo 'Depolying Build'
