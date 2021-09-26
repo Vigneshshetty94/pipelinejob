@@ -7,7 +7,7 @@ parameters {
            stage('BUILD') {
                agent {label 'master'}
                   steps {
-                      echo "My name is ${params. 'NAME'}
+                      echo "My name is ${params.'NAME'}
                       sh 'ls -lrt'
                      }
                   }
