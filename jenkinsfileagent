@@ -15,7 +15,7 @@ parameters {
              agent {label 'Slave2'}
                 steps {
                  sh '''
-                      echo hello all
+                      echo Hello all
                        du -h
                     '''
                  }
