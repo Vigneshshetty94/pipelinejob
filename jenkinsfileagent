@@ -24,7 +24,7 @@ parameters {
            stage('Deploy') {
                 agent {label 'Slave2'}
                    steps {
-                 sh 'echo code has been deployed'
+                 echo "code has been deployed"
                     }
                  }
         }
