@@ -1,15 +1,15 @@
 parameter {
 agent any
-triggers {
-cron('H/15 * * * * *')
-}
+# triggers {
+# cron('H/15 * * * * *')
+# }
 environment {
-	NAME = 'Vignesh'
+	NAME = "Vignesh"
 }
 stages {
  	stage('Build') {	
 	    steps {
-		echo "$NAME"
+		echo "NAME = ${env.NAME}"
                  sh 'sleep 5'
 			}
 		}
