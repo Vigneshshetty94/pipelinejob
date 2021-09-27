@@ -6,7 +6,7 @@ agent any
 // cron('H/15 * * * *')
  // }
 environment {
-	NAME = "Vignesh"
+	NAME= "Vignesh"
 }
 stages {
  	stage('Build') {	
