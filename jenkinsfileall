@@ -1,5 +1,7 @@
 pipeline {
 agent any
+parameter {
+string (name = 
  // triggers {
 // cron('H/15 * * * *')
  // }
@@ -9,7 +11,8 @@ environment {
 stages {
  	stage('Build') {	
 	    steps {
-		echo "NAME = ${env.NAME}"
+	    echo "NAME ${params.NAME}"
+		// echo "NAME = ${env.NAME}"
                  sh 'sleep 5'
 			}
 		}
