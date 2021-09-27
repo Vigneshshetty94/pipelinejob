@@ -1,7 +1,7 @@
 pipeline {
 agent any
-parameter {
-string (name = 
+// parameter {
+// string (name = 
  // triggers {
 // cron('H/15 * * * *')
  // }
