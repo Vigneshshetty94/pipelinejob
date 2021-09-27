@@ -1,7 +1,9 @@
 pipeline {
 agent any
-// parameter {
-// string (name: 'NAME'
+parameter {
+string (name: 'NAME', description: 'Enter your name')
+bolleanparams(name: 'SKip QA', description: Ehter your choice)
+choice(name: 'select', choices[1.Test, 2.QA, 3.Deploy'], description: 'Enter yes or no')
  // triggers {
 // cron('H/15 * * * *')
  // }
