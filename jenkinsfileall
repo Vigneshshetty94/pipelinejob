@@ -1,5 +1,5 @@
 parameter {
-agent all
+agent any
 triggers {
 cron('H/15 * * * * *')
 }
