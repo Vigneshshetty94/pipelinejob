@@ -1,0 +1,17 @@
+parameter {
+agent none
+triggers {
+cron('H/15 * * * * *')
+}
+environment {
+	NAME = 'Vignesh'
+}
+stages {
+ 	stage('Build') {	
+	    steps {
+		echo "$NAME"
+                 sh 'sleep 5'
+			}
+		}
+	}
+}
