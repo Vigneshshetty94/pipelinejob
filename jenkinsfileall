@@ -9,7 +9,7 @@ environment {
 stages {
  	stage('Build') {	
 	    steps {
-		sh 'echo "NAME = ${env.NAME}"'
+		echo "NAME = ${env.NAME}"
                  sh 'sleep 5'
 			}
 		}
